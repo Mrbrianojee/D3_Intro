@@ -13,15 +13,23 @@
 
 </body>
 <script>
-    //place you D3 code here
-    var myData = [10, 15, 20, 30, 45, 50];
+   var myData = [ 10, 15, 20, 30, 45, 50, 40, 45 ,50 , 40 ];
     var svg = d3.select("body")
         .append("svg")
         .attr("width", 500)
         .attr("height", 300)
         .attr("style", "background-color:#ddd");
-    /* added some style*/
-    //add code here
+
+    svg.selectAll("rect")
+        .data(myData)
+        .enter()
+        .append("rect")
+        .attr("x", function(d,i){return i * (30 + 3)})
+        .attr("y", function(d){return 300 - d * 5})
+        .attr("width", 30)
+        .attr("height", function(d){return d * 5})
+        .attr("fill", "#30C5C7");
+
 </script>
 <script src="js/script.js"></script>
 </html>
