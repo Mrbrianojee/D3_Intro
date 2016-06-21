@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<head>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
+    <style>
+        body {
+            font: 16px sans-serif;
+        }
+
+        svg {
+            background-color: #ddd;
+        }
+
+        .svgText {
+            font-family: dosis;
+            font-size: 2em;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <svg width="500" height="300">
+        <rect height="200" width="100" x="20" y="20" fill="#ff0000" stroke="#000000" stroke-width="10"></rect>
+        <circle r="40" cx="120" cy="120" fill="#00ff00" stroke="#000000" stroke-width="10"></circle>
+        <ellipse rx="40" ry="20" cx="200" cy="180"></ellipse>
+        <line x1="120" x2="400" y1="20" y2="220" stroke="#0000ff" stroke-width="10"></line>
+        <text x="200" y="40" class="svgtext">SVG Text!</text>
+    </svg>
+</div>
+</body>
+</html>
