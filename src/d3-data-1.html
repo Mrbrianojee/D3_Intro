@@ -13,7 +13,12 @@
 
 </body>
 <script>
-   var myData = [ 10, 15, 20, 30, 45, 50, 40, 45 ,50 , 40 ];
+    var myData = [10, 15, 20, 30, 45, 50, 40, 45, 50, 40, 90, 10, 15, 13, 34, 23, 44, 99, 100, 45];
+
+    var svgWidth = 500;
+    var svgHeight = 300;
+    var spacing = 15;
+
     var svg = d3.select("body")
         .append("svg")
         .attr("width", 500)
@@ -24,11 +29,28 @@
         .data(myData)
         .enter()
         .append("rect")
-        .attr("x", function(d,i){return i * (30 + 3)})
-        .attr("y", function(d){return 300 - d * 5})
-        .attr("width", 30)
-        .attr("height", function(d){return d * 5})
+        .attr("x", function (d, i) {
+            return i * (svgWidth / myData.length)
+        })
+        .attr("y", function (d) {
+            return 300 - d * 5
+        })
+        .attr("width", (svgWidth / myData.length) - spacing)
+        .attr("height", function (d) {
+            return d * 5
+        })
         .attr("fill", "#30C5C7");
+
+    var myNewData = [40, 25, 10, 35, 45, 6, 40, 75, 50, 80];
+
+    svg.selectAll("rect") // existing rect elements
+        .data(myNewData)
+        .attr("y", function (d) {
+            return (svgHeight - d);
+        }) // d is from new array
+        .attr("height", function (d) {
+            return d
+        });
 
 </script>
 <script src="js/script.js"></script>
